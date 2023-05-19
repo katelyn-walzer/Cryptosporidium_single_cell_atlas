@@ -1,0 +1,13 @@
+{
+	"n_targets": 4023,
+	"n_bootstraps": 60,
+	"n_processed": 16282385,
+	"n_pseudoaligned": 297984,
+	"n_unique": 246251,
+	"p_pseudoaligned": 1.8,
+	"p_unique": 1.5,
+	"kallisto_version": "0.46.0",
+	"index_version": 10,
+	"start_time": "Tue Jan  3 12:19:00 2023",
+	"call": "kallisto quant -i CryptoDB-46_CparvumIowaII_AnnotatedTranscripts.index -o female_in_vitro_CryptoDB_46_rep_4 -t 24 -b 60 --single -l 500 -s 100 Female_in_vitro_4_mergedLanes.fastq.gz"
+}

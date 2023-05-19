@@ -1,0 +1,17 @@
+sample	stage	sex	origin	replicate	experiment	batch	host	gene
+male_CryptoDB_46_rep_1	male	male	in_vitro	1	1	1	human	cgd6_2670
+male_CryptoDB_46_rep_2	male	male	in_vitro	2	1	1	human	cgd6_2670
+male_CryptoDB_46_rep_3	male	male	in_vitro	3	1	1	human	cgd6_2670
+male_CryptoDB_46_rep_4	male	male	in_vitro	4	1	1	human	cgd6_2670
+female_in_vitro_CryptoDB_46_rep_1	female_in_vitro	female	in_vitro	1	2	2	human	cgd6_2090
+female_in_vitro_CryptoDB_46_rep_2	female_in_vitro	female	in_vitro	2	2	2	human	cgd6_2090
+female_in_vitro_CryptoDB_46_rep_3	female_in_vitro	female	in_vitro	3	2	2	human	cgd6_2090
+female_in_vitro_CryptoDB_46_rep_4	female_in_vitro	female	in_vitro	4	2	2	human	cgd6_2090
+female_in_vivo_CryptoDB_46_rep_1	female_in_vivo	female	in_vivo	1	2	2	mouse	cgd6_2090
+female_in_vivo_CryptoDB_46_rep_2	female_in_vivo	female	in_vivo	2	2	2	mouse	cgd6_2090
+female_in_vivo_CryptoDB_46_rep_3	female_in_vivo	female	in_vivo	3	2	2	mouse	cgd6_2090
+female_in_vivo_CryptoDB_46_rep_4	female_in_vivo	female	in_vivo	4	2	2	mouse	cgd6_2090
+asexual_CryptoDB_46_rep_1	asexual	asexual	in_vitro	1	2	2	human	cgd5_1960
+asexual_CryptoDB_46_rep_2	asexual	asexual	in_vitro	2	2	2	human	cgd5_1960
+asexual_CryptoDB_46_rep_3	asexual	asexual	in_vitro	3	2	2	human	cgd5_1960
+asexual_CryptoDB_46_rep_4	asexual	asexual	in_vitro	4	2	2	human	cgd5_1960
