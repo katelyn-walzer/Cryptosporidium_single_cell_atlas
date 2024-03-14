@@ -6,8 +6,8 @@ The parasite *Cryptosporidium* is a leading agent of diarrheal disease in young 
 
 ## DIRECTORY OUTLINE
 
-/ANALYSIS - contains the Rmarkdown (.rmd) file that includes all code for the paper, now published in mBio. Also contains the R file with code. Outputs used for sequencing analysis are in this folder, as well as the study design file. The table for differentially expressed genes (color-coded for AP2-F and crystalloid body) is also in this folder.
+/Bulk_RNA_Seq_Analysis - 
 
-/ANALYSIS/GSEA - contains the files used for gene set enrichment analysis of oocyst wall and crystalloid body genes.
+/Bulk_RNA_Seq_Myb-M_Gain-of-Function_Analysis - 
 
-/QC - contains the outputs from running fastqc on all raw fastq files.
+/scRNA_Seq_Analysis - 
