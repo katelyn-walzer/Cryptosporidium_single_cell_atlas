@@ -11,3 +11,5 @@ The parasite *Cryptosporidium* is a leading agent of diarrheal disease in young 
 /Bulk_RNA_Seq_Myb-M_Gain-of-Function_Analysis - 
 
 /scRNA_Seq_Analysis - 
+
+/scRNA_Seq_Analysis_with_lncRNAs - 
