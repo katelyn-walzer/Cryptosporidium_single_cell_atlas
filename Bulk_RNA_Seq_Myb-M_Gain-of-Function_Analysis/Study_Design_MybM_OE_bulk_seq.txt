@@ -1,0 +1,13 @@
+sample	stage	replicate	host	strain	condition	strain_condition
+WT_30hrs_vehicle_rep_1	asexual	1	human	WT	vehicle	WT_vehicle
+WT_30hrs_vehicle_rep_2	asexual	2	human	WT	vehicle	WT_vehicle
+WT_30hrs_vehicle_rep_3	asexual	3	human	WT	vehicle	WT_vehicle
+WT_30hrs_Shield_rep_1	asexual	1	human	WT	Shield	WT_Shield
+WT_30hrs_Shield_rep_2	asexual	2	human	WT	Shield	WT_Shield
+WT_30hrs_Shield_rep_3	asexual	3	human	WT	Shield	WT_Shield
+MybM_OE_30hrs_vehicle_rep_1	asexual	1	human	MybM_OE	vehicle	MybM_OE_vehicle
+MybM_OE_30hrs_vehicle_rep_2	asexual	2	human	MybM_OE	vehicle	MybM_OE_vehicle
+MybM_OE_30hrs_vehicle_rep_3	asexual	3	human	MybM_OE	vehicle	MybM_OE_vehicle
+MybM_OE_30hrs_Shield_rep_1	asexual	1	human	MybM_OE	Shield	MybM_OE_Shield
+MybM_OE_30hrs_Shield_rep_2	asexual	2	human	MybM_OE	Shield	MybM_OE_Shield
+MybM_OE_30hrs_Shield_rep_3	asexual	3	human	MybM_OE	Shield	MybM_OE_Shield
