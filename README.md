@@ -12,7 +12,7 @@ The parasite *Cryptosporidium* is a leading agent of diarrheal disease in young 
 
 **/scRNA_Seq_Analysis -** contains the code and results for single-cell RNA sequencing (scRNA-seq) of parasites captured from HCT-8 culture or an IFN-gamma knockout mouse. In vitro samples were collected at 24, 36, 42, 46, and 54 hours post invasion while the in vivo sample was collected from an acutely infected mouse on day 6. The filtered_feature_bc_matrix (Cell Ranger 3.1.0 output) consists of features (tsv), barcodes (tsv), and matrix (mtx) files which are all in this folder. The features (tsv) file is the same for all samples. Supplementary_Table_1 contains a summary of parasites captured for each sample and their sequencing information. Analyses were carried out on asexual samples (24 and 36 hours) or on all samples.
 
-  <ins>Asexual</ins>
+&nbsp;&nbsp;&nbsp;&nbsp;<ins>Asexual</ins>
 
 
 **/scRNA_Seq_Analysis_with_lncRNAs -** 
