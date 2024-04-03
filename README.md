@@ -10,6 +10,9 @@ The parasite *Cryptosporidium* is a leading agent of diarrheal disease in young 
 
 **/Bulk_RNA_Seq_Myb-M_Gain-of-Function_Analysis -** contains the code and results for bulk RNA sequencing of samples collected at 30 hours post invasion after 6 hours of vehicle or Shield-1 treatment. Shield-1 drives Myb-M protein expression in a gain-of-function mutant. Supplementary_Data_2.R contains the code for QC, read mapping, filtering, normalization, and differential expression analysis across each strain and condition. Outputs used for sequencing analysis are in this folder, as well as the study design file. Supplementary_Table_12 is a multi-tab Excel file containing differentially expressed genes between all samples (asexual- and male-specific genes are highlighted in green and blue, respectively). The folder **QC** contains the outputs from running fastqc on all raw fastq files.
 
-**/scRNA_Seq_Analysis -**
+**/scRNA_Seq_Analysis -** contains the code and results for single-cell RNA sequencing (scRNA-seq) of parasites captured from HCT-8 culture or an IFN-gamma knockout mouse. In vitro samples were collected at 24, 36, 42, 46, and 54 hours post invasion while the in vivo sample was collected from an acutely infected mouse on day 6. The filtered_feature_bc_matrix (Cell Ranger 3.1.0 output) consists of features (tsv), barcodes (tsv), and matrix (mtx) files which are all in this folder. The features (tsv) file is the same for all samples. Supplementary_Table_1 contains a summary of parasites captured for each sample and their sequencing information. Analyses were carried out on asexual samples (24 and 36 hours) or on all samples.
+
+  <u>Asexual</u>
+
 
 **/scRNA_Seq_Analysis_with_lncRNAs -** 
