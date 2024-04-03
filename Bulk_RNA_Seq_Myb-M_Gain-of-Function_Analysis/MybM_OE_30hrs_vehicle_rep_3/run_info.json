@@ -1,0 +1,13 @@
+{
+	"n_targets": 4023,
+	"n_bootstraps": 60,
+	"n_processed": 27431979,
+	"n_pseudoaligned": 187423,
+	"n_unique": 98828,
+	"p_pseudoaligned": 0.7,
+	"p_unique": 0.4,
+	"kallisto_version": "0.48.0",
+	"index_version": 10,
+	"start_time": "Wed Sep 20 12:03:45 2023",
+	"call": "kallisto quant -i CryptoDB-46_CparvumIowaII_AnnotatedTranscripts.index -o MybM_OE_30hrs_vehicle_rep_3 -t 24 -b 60 --single -l 275 -s 30 09_MybM_OE_30hrs_vehicle_3_S9_R1_001.fastq.gz"
+}

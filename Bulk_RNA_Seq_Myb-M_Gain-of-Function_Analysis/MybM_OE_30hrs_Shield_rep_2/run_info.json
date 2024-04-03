@@ -1,0 +1,13 @@
+{
+	"n_targets": 4023,
+	"n_bootstraps": 60,
+	"n_processed": 28045889,
+	"n_pseudoaligned": 366826,
+	"n_unique": 204205,
+	"p_pseudoaligned": 1.3,
+	"p_unique": 0.7,
+	"kallisto_version": "0.48.0",
+	"index_version": 10,
+	"start_time": "Wed Sep 20 12:14:14 2023",
+	"call": "kallisto quant -i CryptoDB-46_CparvumIowaII_AnnotatedTranscripts.index -o MybM_OE_30hrs_Shield_rep_2 -t 24 -b 60 --single -l 275 -s 30 11_MybM_OE_30hrs_Shield_2_S11_R1_001.fastq.gz"
+}

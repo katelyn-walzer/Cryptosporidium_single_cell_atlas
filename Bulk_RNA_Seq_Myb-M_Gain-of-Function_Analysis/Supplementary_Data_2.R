@@ -1,0 +1,532 @@
+#Analyze bulk RNA sequencing samples for MybM overexpression and wild type control
+#Already have Crypto46 index file, use that CryptoDB-46_CparvumIowaII_AnnotatedTranscripts.index
+
+#Run fastqc
+fastqc 01_WT_30hrs_vehicle_1_S1_R1_001.fastq.gz -t 24 -o /venice/striepenlab/Katelyn_Walzer_data/Single_Cell_Transcriptomics/Striepen_bulk_RNA_seq_MybM_OE/2023_9_19_Analysis/fastqc
+fastqc 02_WT_30hrs_vehicle_2_S2_R1_001.fastq.gz -t 24 -o /venice/striepenlab/Katelyn_Walzer_data/Single_Cell_Transcriptomics/Striepen_bulk_RNA_seq_MybM_OE/2023_9_19_Analysis/fastqc
+fastqc 03_WT_30hrs_vehicle_3_S3_R1_001.fastq.gz -t 24 -o /venice/striepenlab/Katelyn_Walzer_data/Single_Cell_Transcriptomics/Striepen_bulk_RNA_seq_MybM_OE/2023_9_19_Analysis/fastqc
+fastqc 04_WT_30hrs_Shield_1_S4_R1_001.fastq.gz -t 24 -o /venice/striepenlab/Katelyn_Walzer_data/Single_Cell_Transcriptomics/Striepen_bulk_RNA_seq_MybM_OE/2023_9_19_Analysis/fastqc
+fastqc 05_WT_30hrs_Shield_2_S5_R1_001.fastq.gz -t 24 -o /venice/striepenlab/Katelyn_Walzer_data/Single_Cell_Transcriptomics/Striepen_bulk_RNA_seq_MybM_OE/2023_9_19_Analysis/fastqc
+fastqc 06_WT_30hrs_Shield_3_S6_R1_001.fastq.gz -t 24 -o /venice/striepenlab/Katelyn_Walzer_data/Single_Cell_Transcriptomics/Striepen_bulk_RNA_seq_MybM_OE/2023_9_19_Analysis/fastqc
+fastqc 07_MybM_OE_30hrs_vehicle_1_S7_R1_001.fastq.gz -t 24 -o /venice/striepenlab/Katelyn_Walzer_data/Single_Cell_Transcriptomics/Striepen_bulk_RNA_seq_MybM_OE/2023_9_19_Analysis/fastqc
+fastqc 08_MybM_OE_30hrs_vehicle_2_S8_R1_001.fastq.gz -t 24 -o /venice/striepenlab/Katelyn_Walzer_data/Single_Cell_Transcriptomics/Striepen_bulk_RNA_seq_MybM_OE/2023_9_19_Analysis/fastqc
+fastqc 09_MybM_OE_30hrs_vehicle_3_S9_R1_001.fastq.gz -t 24 -o /venice/striepenlab/Katelyn_Walzer_data/Single_Cell_Transcriptomics/Striepen_bulk_RNA_seq_MybM_OE/2023_9_19_Analysis/fastqc
+fastqc 10_MybM_OE_30hrs_Shield_1_S10_R1_001.fastq.gz -t 24 -o /venice/striepenlab/Katelyn_Walzer_data/Single_Cell_Transcriptomics/Striepen_bulk_RNA_seq_MybM_OE/2023_9_19_Analysis/fastqc
+fastqc 11_MybM_OE_30hrs_Shield_2_S11_R1_001.fastq.gz -t 24 -o /venice/striepenlab/Katelyn_Walzer_data/Single_Cell_Transcriptomics/Striepen_bulk_RNA_seq_MybM_OE/2023_9_19_Analysis/fastqc
+fastqc 12_MybM_OE_30hrs_Shield_3_S12_R1_001.fastq.gz -t 24 -o /venice/striepenlab/Katelyn_Walzer_data/Single_Cell_Transcriptomics/Striepen_bulk_RNA_seq_MybM_OE/2023_9_19_Analysis/fastqc
+
+#Run alignment with kallisto to CryptoDB version 46
+#Average length of fragment is 275 bp from TapeStation
+#Standard deviation 30
+kallisto quant -i CryptoDB-46_CparvumIowaII_AnnotatedTranscripts.index -o WT_30hrs_vehicle_rep_1 -t 24 -b 60 --single -l 275 -s 30 01_WT_30hrs_vehicle_1_S1_R1_001.fastq.gz
+kallisto quant -i CryptoDB-46_CparvumIowaII_AnnotatedTranscripts.index -o WT_30hrs_vehicle_rep_2 -t 24 -b 60 --single -l 275 -s 30 02_WT_30hrs_vehicle_2_S2_R1_001.fastq.gz
+kallisto quant -i CryptoDB-46_CparvumIowaII_AnnotatedTranscripts.index -o WT_30hrs_vehicle_rep_3 -t 24 -b 60 --single -l 275 -s 30 03_WT_30hrs_vehicle_3_S3_R1_001.fastq.gz
+kallisto quant -i CryptoDB-46_CparvumIowaII_AnnotatedTranscripts.index -o WT_30hrs_Shield_rep_1 -t 24 -b 60 --single -l 275 -s 30 04_WT_30hrs_Shield_1_S4_R1_001.fastq.gz
+kallisto quant -i CryptoDB-46_CparvumIowaII_AnnotatedTranscripts.index -o WT_30hrs_Shield_rep_2 -t 24 -b 60 --single -l 275 -s 30 05_WT_30hrs_Shield_2_S5_R1_001.fastq.gz
+kallisto quant -i CryptoDB-46_CparvumIowaII_AnnotatedTranscripts.index -o WT_30hrs_Shield_rep_3 -t 24 -b 60 --single -l 275 -s 30 06_WT_30hrs_Shield_3_S6_R1_001.fastq.gz
+kallisto quant -i CryptoDB-46_CparvumIowaII_AnnotatedTranscripts.index -o MybM_OE_30hrs_vehicle_rep_1 -t 24 -b 60 --single -l 275 -s 30 07_MybM_OE_30hrs_vehicle_1_S7_R1_001.fastq.gz
+kallisto quant -i CryptoDB-46_CparvumIowaII_AnnotatedTranscripts.index -o MybM_OE_30hrs_vehicle_rep_2 -t 24 -b 60 --single -l 275 -s 30 08_MybM_OE_30hrs_vehicle_2_S8_R1_001.fastq.gz
+kallisto quant -i CryptoDB-46_CparvumIowaII_AnnotatedTranscripts.index -o MybM_OE_30hrs_vehicle_rep_3 -t 24 -b 60 --single -l 275 -s 30 09_MybM_OE_30hrs_vehicle_3_S9_R1_001.fastq.gz
+kallisto quant -i CryptoDB-46_CparvumIowaII_AnnotatedTranscripts.index -o MybM_OE_30hrs_Shield_rep_1 -t 24 -b 60 --single -l 275 -s 30 10_MybM_OE_30hrs_Shield_1_S10_R1_001.fastq.gz
+kallisto quant -i CryptoDB-46_CparvumIowaII_AnnotatedTranscripts.index -o MybM_OE_30hrs_Shield_rep_2 -t 24 -b 60 --single -l 275 -s 30 11_MybM_OE_30hrs_Shield_2_S11_R1_001.fastq.gz
+kallisto quant -i CryptoDB-46_CparvumIowaII_AnnotatedTranscripts.index -o MybM_OE_30hrs_Shield_rep_3 -t 24 -b 60 --single -l 275 -s 30 12_MybM_OE_30hrs_Shield_3_S12_R1_001.fastq.gz
+#End python on terminal
+
+
+# load packages ----
+library(tidyverse)
+library(tximport)
+library(biomaRt)
+
+setwd("/Users/katelynwalzer/Desktop/RNA_Seq_Striepen/2023_9_25_MybM_OE_30hrs_Analysis")
+getwd()
+
+# read in study design ----
+targets <- read_tsv("Study_Design_MybM_OE_bulk_seq.txt")
+
+# create file paths to the abundance files generated by Kallisto using the 'file.path' function
+path <- file.path(targets$sample, "abundance.h5")
+
+# check to make sure this path is correct by seeing if the files exist
+all(file.exists(path))
+
+# use dplyr to modify study design to include these file paths as a new column
+targets <- mutate(targets, path)
+
+# import Kallisto transcript counts into R using Tximport ----
+Txi_gene <- tximport(path,
+                     type = "kallisto",
+                     txOut = TRUE,
+                     countsFromAbundance = "lengthScaledTPM")
+
+#take a look at the type of object
+class(Txi_gene)
+names(Txi_gene)
+
+myCPM <- as_tibble(Txi_gene$abundance, rownames = "geneSymbol") # counts after adjusting for transcript length
+myCounts <- as_tibble(Txi_gene$counts, rownames = "geneSymbol") # counts per million (CPM)
+
+library(RColorBrewer)
+library(reshape2)
+library(genefilter)
+library(edgeR)
+library(matrixStats)
+
+# Identify variables of interest in study design file ----
+targets
+groups1 <- targets$strain_condition
+groups1 <- factor(groups1)
+sampleLabels <- targets$sample
+
+# Examine data up to this point ----
+myCPM <- Txi_gene$abundance
+myCounts <- Txi_gene$counts
+
+# graph both matrices
+colSums(myCPM)
+colSums(myCounts)
+
+# Take a look at the heteroskedasticity of the data ----
+# first, calculate row means and standard deviations for each transcript or gene
+# and add these to the data matrix
+myCPM.stats <- transform(myCPM,
+                         SD=rowSds(myCPM),
+                         AVG=rowMeans(myCPM),
+                         MED=rowMedians(myCPM),
+                         rownames = (myCPM)
+)
+
+head(myCPM.stats)
+
+#produce a scatter plot of the transformed data
+ggplot(myCPM.stats, aes(x=SD, y=MED)) +
+  geom_point(shape=16, size=2)
+
+# Make a DGElist from the counts, and plot ----
+myDGEList <- DGEList(Txi_gene$counts)
+
+save(myDGEList, file = "myDGEList")
+
+# use the 'cpm' function from EdgeR to get counts per million
+cpm <- cpm(myDGEList)
+colSums(cpm)
+log2.cpm <- cpm(myDGEList, log=TRUE)
+
+# Take a look at the distribution of the Log2 CPM
+nsamples <- ncol(log2.cpm)
+# now select colors from a single palette
+myColors <- brewer.pal(nsamples, "Paired")
+
+# 'coerce' the data matrix to a dataframe to use tidyverse on it
+log2.cpm.df <- as_tibble(log2.cpm)
+
+colnames(log2.cpm.df) <- sampleLabels
+
+# use the reshape2 package to 'melt' dataframe (from wide to tall)
+log2.cpm.df.melt <- melt(log2.cpm.df)
+
+
+ggplot(log2.cpm.df.melt, aes(x=variable, y=value, fill=variable)) +
+  geom_violin(trim = FALSE, show.legend = FALSE) +
+  stat_summary(fun.y = "median", geom = "point", shape = 124, size = 6, color = "black", show.legend = FALSE) +
+  labs(y="log2 expression", x = "sample",
+       title="Log2 Counts per Million (CPM)",
+       subtitle="unfiltered, non-normalized",
+       caption=paste0("produced on ", Sys.time())) + 
+  coord_flip() 
+
+
+# Filter the data ----
+#first, take a look at how many genes or transcripts have no read counts at all
+table(rowSums(myDGEList$counts==0)==12)
+
+
+# set some cut-off to get rid of genes/transcripts with low counts
+keepers <- rowSums(cpm>1)>=3 #last number is replicates, min replicates
+myDGEList.filtered <- myDGEList[keepers,]
+dim(myDGEList.filtered)
+
+log2.cpm.filtered <- cpm(myDGEList.filtered, log=TRUE)
+log2.cpm.filtered.df <- as_tibble(log2.cpm.filtered) 
+colnames(log2.cpm.filtered.df) <- sampleLabels
+log2.cpm.filtered.df.melt <- melt(log2.cpm.filtered.df)
+
+ggplot(log2.cpm.filtered.df.melt, aes(x=variable, y=value, fill=variable)) +
+  geom_violin(trim = FALSE, show.legend = FALSE) +
+  stat_summary(fun.y = "median", geom = "point", shape = 124, size = 6, color = "black", show.legend = FALSE) +
+  labs(y="log2 expression", x = "sample",
+       title="Log2 Counts per Million (CPM)",
+       subtitle="filtered, non-normalized",
+       caption=paste0("produced on ", Sys.time())) +
+  coord_flip() 
+
+
+# Normalize the data ----
+myDGEList.filtered.norm <- calcNormFactors(myDGEList.filtered, method = "TMM")
+
+# use the 'cpm' function from EdgeR to get counts per million from the normalized data
+log2.cpm.filtered.norm <- cpm(myDGEList.filtered.norm, log=TRUE)
+log2.cpm.filtered.norm.df <- as_tibble(log2.cpm.filtered.norm)
+colnames(log2.cpm.filtered.norm.df) <- sampleLabels
+log2.cpm.filtered.norm.df.melt <- melt(log2.cpm.filtered.norm.df)
+
+ggplot(log2.cpm.filtered.norm.df.melt, aes(x=variable, y=value, fill=variable)) +
+  geom_violin(trim = FALSE, show.legend = FALSE) +
+  stat_summary(fun.y = "median", geom = "point", shape = 124, size = 6, color = "black", show.legend = FALSE) +
+  labs(y="log2 expression", x = "sample",
+       title="Log2 Counts per Million (CPM)",
+       subtitle="filtered, TMM normalized",
+       caption=paste0("produced on ", Sys.time())) +
+  coord_flip() 
+
+
+library(DT) 
+library(gt) 
+library(plotly) 
+library(skimr)
+
+
+# Need to convert the datamatrix to a dataframe, while preserving the rownames as a new column in the dataframe
+mydata.df <- as_tibble(log2.cpm.filtered.norm, rownames = "geneSymbol")
+colnames(mydata.df) <- c("geneSymbol", sampleLabels)
+skim(mydata.df)
+mydata.melt <- as_tibble(melt(mydata.df))
+
+write_tsv(mydata.df, "normData_CryptoDB_MybM_OE_30hrs.txt") 
+
+
+# Hierarchical clustering ---------------
+distance <- dist(t(log2.cpm.filtered.norm), method="maximum") 
+clusters <- hclust(distance, method = "complete") 
+plot(clusters, labels=sampleLabels)
+
+
+# Principal component analysis (PCA) -------------
+pca.res <- prcomp(t(log2.cpm.filtered.norm), scale.=F, retx=T)
+#look at pca.res in environment
+ls(pca.res)
+summary(pca.res) 
+x <- pca.res$rotation 
+pca.res$x
+pc.var<-pca.res$sdev^2 
+pc.per<-round(pc.var/sum(pc.var)*100, 1)
+pc.per
+
+# Visualize the PCA result ------------------
+pca.res.df <- as_tibble(pca.res$x)
+ggplot(pca.res.df, aes(x=PC1, y=PC2, color=targets$strain_condition)) +
+  geom_point(size=8) +
+  theme_bw() +
+  xlab(paste0("PC1 (",pc.per[1],"%",")")) + 
+  ylab(paste0("PC2 (",pc.per[2],"%",")")) +
+  labs(title="PCA plot of all samples") +
+  theme(legend.title = element_blank()) +
+  theme(axis.text=element_text(size = 14),
+        axis.title = element_text(size=16),
+        plot.title=element_text(face = "bold", size = 20),
+        legend.text = element_text(size=16)) 
+
+# Use dplyr 'mutate' function to add new columns based on existing data -------
+mydata.df <- mutate(mydata.df,
+                    WT_30hrs_vehicle.AVG = (WT_30hrs_vehicle_rep_1 + WT_30hrs_vehicle_rep_2 + WT_30hrs_vehicle_rep_3)/3,
+                    WT_30hrs_Shield.AVG = (WT_30hrs_Shield_rep_1 + WT_30hrs_Shield_rep_2 + WT_30hrs_Shield_rep_3)/3,
+                    MybM_OE_30hrs_vehicle.AVG = (MybM_OE_30hrs_vehicle_rep_1 + MybM_OE_30hrs_vehicle_rep_2 + MybM_OE_30hrs_vehicle_rep_3)/3,
+                    MybM_OE_30hrs_Shield.AVG = (MybM_OE_30hrs_Shield_rep_1 + MybM_OE_30hrs_Shield_rep_2 + MybM_OE_30hrs_Shield_rep_3)/3,
+                    
+                    LogFC.WT_30hrs_Shield_vs_WT_30hrs_vehicle = (WT_30hrs_Shield.AVG - WT_30hrs_vehicle.AVG),
+                    LogFC.MybM_OE_30hrs_Shield_vs_MybM_OE_30hrs_vehicle = (MybM_OE_30hrs_Shield.AVG - MybM_OE_30hrs_vehicle.AVG),
+                    LogFC.MybM_OE_30hrs_vehicle_vs_WT_30hrs_vehicle = (MybM_OE_30hrs_vehicle.AVG - WT_30hrs_vehicle.AVG),
+                    LogFC.MybM_OE_30hrs_Shield_vs_WT_30hrs_Shield = (MybM_OE_30hrs_Shield.AVG - WT_30hrs_Shield.AVG)) %>% 
+  mutate_if(is.numeric, round, 2)
+
+
+write_tsv(mydata.df,"2023_9_25_Diff_genes_avg_MybM_OE.txt")
+
+library(limma)
+
+# Set up the design matrix ----
+groups1 <- relevel(groups1, "MybM_OE_Shield")
+design <- model.matrix(~0 + groups1)
+colnames(design) <- levels(groups1)
+
+# Model mean-variance trend and fit linear model to data ----
+# Use VOOM function from Limma package to model the mean-variance relationship
+v.DGEList.filtered.norm <- voom(myDGEList.filtered.norm, design, plot = TRUE)
+# fit a linear model to your data
+fit <- lmFit(v.DGEList.filtered.norm, design)
+
+# Contrast matrix ----
+# how do parasites respond to Shield treatment? What is the effect of overexpressing MybM?
+contrast.matrix <- makeContrasts(WT_Shield_vehicle = WT_Shield - WT_vehicle,
+                                 MybM_OE_Shield_vehicle = MybM_OE_Shield - MybM_OE_vehicle,
+                                 MybM_OE_WT_vehicle = MybM_OE_vehicle - WT_vehicle,
+                                 MybM_OE_WT_Shield = MybM_OE_Shield - WT_Shield,
+                                 levels=design)
+
+
+# extract the linear model fit -----
+fits <- contrasts.fit(fit, contrast.matrix)
+ebFit <- eBayes(fits)
+
+
+# TopTable to view differentially expressed genes -----
+
+#WT_30hrs_hits is WT_30hrs_Shield versus WT_30hrs_vehicle
+WT_30hrs_hits <- topTable(ebFit, adjust ="BH", coef=1, number=10000, sort.by="logFC")
+
+# convert to a tibble
+WT_30hrs_hits <- as_tibble(WT_30hrs_hits, rownames = "geneSymbol")
+
+gt(WT_30hrs_hits)
+
+
+#MybM_OE_30hrs_hits is MybM_OE_30hrs_Shield versus MybM_OE_30hrs_vehicle
+MybM_OE_30hrs_hits <- topTable(ebFit, adjust ="BH", coef=2, number=10000, sort.by="logFC")
+
+# convert to a tibble
+MybM_OE_30hrs_hits <- as_tibble(MybM_OE_30hrs_hits, rownames = "geneSymbol")
+
+gt(MybM_OE_30hrs_hits)
+
+
+#vehicle_hits is MybM_OE_30hrs_vehicle versus WT_30hrs_vehicle
+vehicle_hits <- topTable(ebFit, adjust ="BH", coef=3, number=10000, sort.by="logFC")
+
+# convert to a tibble
+vehicle_hits <- as_tibble(vehicle_hits, rownames = "geneSymbol")
+
+gt(vehicle_hits)
+
+
+#shield_hits is MybM_OE_30hrs_Shield versus WT_30hrs_Shield
+shield_hits <- topTable(ebFit, adjust ="BH", coef=4, number=10000, sort.by="logFC")
+
+# convert to a tibble
+shield_hits <- as_tibble(shield_hits, rownames = "geneSymbol")
+
+gt(shield_hits)
+
+
+#Make volcano plots
+
+#For labels
+#Subset male-specific genes
+Male_specific_genes_WT <- subset(WT_30hrs_hits,
+                                 geneSymbol=="cgd8_5323-RA" |
+                                 geneSymbol=="cgd5_2870-RA" |
+                                 geneSymbol=="cgd3_3050-RA" |
+                                 geneSymbol=="cgd5_1510-RA" |
+                                 geneSymbol=="cgd3_3550-RA" |
+                                 geneSymbol=="cgd8_2970-RA" |
+                                 geneSymbol=="cgd1_2980-RA" |
+                                 geneSymbol=="cgd3_520-RA" |
+                                 geneSymbol=="cgd7_2490-RA" |
+                                 geneSymbol=="cgd8_1740-RA" |
+                                 geneSymbol=="cgd6_2670-RA" |
+                                 geneSymbol=="cgd2_1270-RA")
+
+#Subset asexual genes
+Asexual_genes_WT <- subset(WT_30hrs_hits,
+                           geneSymbol=="cgd4_4503-RA" |
+                           geneSymbol=="cgd3_3370-RA" |
+                           geneSymbol=="cgd6_3940-RA" |
+                           geneSymbol=="cgd3_920-RA" |
+                           geneSymbol=="cgd2_3730-RA" |
+                           geneSymbol=="cgd6_3050-RA" |
+                           geneSymbol=="cgd4_3530-RA" |
+                           geneSymbol=="cgd1_640-RA")
+
+
+#Subset male-specific genes
+Male_specific_genes_MybM <- subset(MybM_OE_30hrs_hits,
+                                 geneSymbol=="cgd8_5323-RA" |
+                                   geneSymbol=="cgd5_2870-RA" |
+                                   geneSymbol=="cgd3_3050-RA" |
+                                   geneSymbol=="cgd5_1510-RA" |
+                                   geneSymbol=="cgd3_3550-RA" |
+                                   geneSymbol=="cgd8_2970-RA" |
+                                   geneSymbol=="cgd1_2980-RA" |
+                                   geneSymbol=="cgd3_520-RA" |
+                                   geneSymbol=="cgd7_2490-RA" |
+                                   geneSymbol=="cgd8_1740-RA" |
+                                   geneSymbol=="cgd6_2670-RA" |
+                                   geneSymbol=="cgd2_1270-RA")
+
+#Subset asexual genes
+Asexual_genes_MybM <- subset(MybM_OE_30hrs_hits,
+                           geneSymbol=="cgd4_4503-RA" |
+                             geneSymbol=="cgd3_3370-RA" |
+                             geneSymbol=="cgd6_3940-RA" |
+                             geneSymbol=="cgd3_920-RA" |
+                             geneSymbol=="cgd2_3730-RA" |
+                             geneSymbol=="cgd6_3050-RA" |
+                             geneSymbol=="cgd4_3530-RA" |
+                             geneSymbol=="cgd1_640-RA")
+
+
+
+#Make a volcano plot for WT 30hrs vehicle and Shield
+#This is part 1 of Figure 4h
+ggplot(WT_30hrs_hits, aes(y=-log10(adj.P.Val), x=logFC, text = paste("Symbol:", geneSymbol))) + geom_point(size=4) +
+  geom_point(mapping = NULL, Asexual_genes_WT, size = 4, colour = "#4CBB17", inherit.aes = TRUE) +
+  geom_point(mapping = NULL, Male_specific_genes_WT, size = 4, colour = "#0095FF", inherit.aes = TRUE) +
+  ylim(-0.5,5) +
+  xlim(-2.75,2.75) +
+  geom_hline(yintercept = -log10(0.01), linetype="dashed", colour="grey", size=0.5) +
+  geom_hline(yintercept = -log10(0.05), linetype="dashed", colour="grey", size=1) +
+  geom_vline(xintercept = 1, linetype="longdash", colour="grey", size=1) +
+  geom_vline(xintercept = -1, linetype="longdash", colour="grey", size=1) +
+  theme_bw() +
+  theme(plot.margin = margin(0.5, 15, 0.5, 0.5, "cm")) +
+  theme(axis.text=element_text(size = 14),
+        axis.title = element_text(size=16),
+        plot.title=element_text(face = "bold", size = 20),
+        plot.subtitle = element_text(size=16)) +
+  labs(title="Effects of Shield treatment on wild type parasites") 
+
+
+#Make a volcano plot for MybM OE 30hrs vehicle and Shield
+#This is part 2 of Figure 4h
+ggplot(MybM_OE_30hrs_hits, aes(y=-log10(adj.P.Val), x=logFC, text = paste("Symbol:", geneSymbol))) + geom_point(size=4) +
+  geom_point(mapping = NULL, Asexual_genes_MybM, size = 4, colour = "#4CBB17", inherit.aes = TRUE) +
+  geom_point(mapping = NULL, Male_specific_genes_MybM, size = 4, colour = "#0095FF", inherit.aes = TRUE) +
+  ylim(-0.5,5) +
+  xlim(-5,5) + 
+  geom_hline(yintercept = -log10(0.01), linetype="dashed", colour="grey", size=0.5) +
+  geom_hline(yintercept = -log10(0.05), linetype="dashed", colour="grey", size=1) +
+  geom_vline(xintercept = 1, linetype="longdash", colour="grey", size=1) +
+  geom_vline(xintercept = -1, linetype="longdash", colour="grey", size=1) +
+  theme_bw() +
+  theme(plot.margin = margin(0.5, 15, 0.5, 0.5, "cm")) +
+  theme(axis.text=element_text(size = 14),
+        axis.title = element_text(size=16),
+        plot.title=element_text(face = "bold", size = 20),
+        plot.subtitle = element_text(size=16)) +
+  labs(title="Effects of Myb-M overexpression at 30 hours") 
+
+
+# decideTests to pull out the DEGs and make Venn Diagram ----
+results <- decideTests(ebFit, method="global", adjust.method="BH", p.value=0.01, lfc=1)
+results <- decideTests(ebFit, method="global", adjust.method="BH", p.value=0.05, lfc=1)
+results <- decideTests(ebFit, method="separate", adjust.method="BH", p.value=0.05, lfc=1)
+
+
+# take a look at what the results of decideTests looks like
+head(results)
+summary(results)
+vennDiagram(results, include=c("up","down"))
+vennDiagram(results, include="up")
+
+
+# retrieve expression data for DEGs ----
+head(v.DGEList.filtered.norm$E)
+colnames(v.DGEList.filtered.norm$E) <- sampleLabels
+
+#This gives all the DiffGenes, regardless of significance between samples (only needs to be significant in one)
+diffGenes <- v.DGEList.filtered.norm$E[results[,1] !=0 | results[,2] !=0 | results[,3] !=0 | results[,4] !=0,]
+head(diffGenes)
+dim(diffGenes)
+#convert DEGs to a dataframe using as_tibble
+diffGenes.df <- as_tibble(diffGenes, rownames = "geneSymbol")
+
+
+#Adding averages to Diff Genes
+#This is where to make new files for gene expression log-fold changes
+Differential_genes_avg.df <- mutate(diffGenes.df,
+                                    WT_30hrs_vehicle.AVG = (WT_30hrs_vehicle_rep_1 + WT_30hrs_vehicle_rep_2 + WT_30hrs_vehicle_rep_3)/3,
+                                    WT_30hrs_Shield.AVG = (WT_30hrs_Shield_rep_1 + WT_30hrs_Shield_rep_2 + WT_30hrs_Shield_rep_3)/3,
+                                    MybM_OE_30hrs_vehicle.AVG = (MybM_OE_30hrs_vehicle_rep_1 + MybM_OE_30hrs_vehicle_rep_2 + MybM_OE_30hrs_vehicle_rep_3)/3,
+                                    MybM_OE_30hrs_Shield.AVG = (MybM_OE_30hrs_Shield_rep_1 + MybM_OE_30hrs_Shield_rep_2 + MybM_OE_30hrs_Shield_rep_3)/3,
+
+                                    
+                                    LogFC.WT_30hrs_Shield_vs_WT_30hrs_vehicle = (WT_30hrs_Shield.AVG - WT_30hrs_vehicle.AVG),
+                                    LogFC.MybM_OE_30hrs_Shield_vs_MybM_OE_30hrs_vehicle = (MybM_OE_30hrs_Shield.AVG - MybM_OE_30hrs_vehicle.AVG),
+                                    LogFC.MybM_OE_30hrs_vehicle_vs_WT_30hrs_vehicle = (MybM_OE_30hrs_vehicle.AVG - WT_30hrs_vehicle.AVG),
+                                    LogFC.MybM_OE_30hrs_Shield_vs_WT_30hrs_Shield = (MybM_OE_30hrs_Shield.AVG - WT_30hrs_Shield.AVG)) %>% 
+  mutate_if(is.numeric, round, 3)
+
+
+#These are the differentially expressed genes
+#This file was re-named to Supplementary Table 12, this is the first tab
+write_tsv(Differential_genes_avg.df, "2023_9_25_MybM_OE_30hrs_Analysis_pval_05_separate.txt")
+
+
+#Check different comparisons, add as new spreadsheets to Supplementary Table 12, simplify
+#Second tab
+#WT_30hrs_Shield_vs_WT_30hrs_vehicle
+diffGenes_WT <- v.DGEList.filtered.norm$E[results[,1] !=0,]
+head(diffGenes_WT)
+dim(diffGenes_WT)
+#convert DEGs to a dataframe using as_tibble
+diffGenes_WT.df <- as_tibble(diffGenes_WT, rownames = "geneSymbol")
+
+Differential_genes_avg_WT.df <- mutate(diffGenes_WT.df,
+                                       WT_30hrs_vehicle.AVG = (WT_30hrs_vehicle_rep_1 + WT_30hrs_vehicle_rep_2 + WT_30hrs_vehicle_rep_3)/3,
+                                       WT_30hrs_Shield.AVG = (WT_30hrs_Shield_rep_1 + WT_30hrs_Shield_rep_2 + WT_30hrs_Shield_rep_3)/3,
+                                       #now make columns comparing each of the averages above 
+                                       LogFC.WT_30hrs_Shield_vs_WT_30hrs_vehicle = (WT_30hrs_Shield.AVG - WT_30hrs_vehicle.AVG)) %>%
+  mutate_if(is.numeric, round, 3)
+
+
+write_tsv(Differential_genes_avg_WT.df, "2023_9_25_Differential_genes_avg_WT_only_LFC1_05_separate.txt")
+
+
+#MybM_30hrs_Shield_vs_MybM_30hrs_vehicle
+#Third tab
+diffGenes_MybM_30hrs <- v.DGEList.filtered.norm$E[results[,2] !=0,]
+head(diffGenes_MybM_30hrs)
+dim(diffGenes_MybM_30hrs)
+#convert DEGs to a dataframe using as_tibble
+diffGenes_MybM_30hrs.df <- as_tibble(diffGenes_MybM_30hrs, rownames = "geneSymbol")
+
+Differential_genes_avg_MybM_30hrs.df <- mutate(diffGenes_MybM_30hrs.df,
+                                               MybM_OE_30hrs_vehicle.AVG = (MybM_OE_30hrs_vehicle_rep_1 + MybM_OE_30hrs_vehicle_rep_2 + MybM_OE_30hrs_vehicle_rep_3)/3,
+                                               MybM_OE_30hrs_Shield.AVG = (MybM_OE_30hrs_Shield_rep_1 + MybM_OE_30hrs_Shield_rep_2 + MybM_OE_30hrs_Shield_rep_3)/3,
+                                               #now make columns comparing each of the averages above 
+                                               LogFC.MybM_OE_30hrs_Shield_vs_MybM_OE_30hrs_vehicle = (MybM_OE_30hrs_Shield.AVG - MybM_OE_30hrs_vehicle.AVG)) %>%
+  mutate_if(is.numeric, round, 3)
+
+write_tsv(Differential_genes_avg_MybM_30hrs.df, "2023_9_25_Differential_genes_avg_MybM_30hrs_only_LFC1_05_separate.txt")
+
+
+#MybM_30hrs_vehicle_vs_WT_30hrs_vehicle
+#Fourth tab
+#There is only one gene, add additional code to prevent loss of gene name
+diffGenes_vehicle <- v.DGEList.filtered.norm$E[results[,3] !=0, rownames = TRUE, drop=FALSE] 
+head(diffGenes_vehicle)
+dim(diffGenes_vehicle)
+#convert DEGs to a dataframe using as_tibble
+diffGenes_vehicle.df <- as_tibble(diffGenes_vehicle, rownames = "geneSymbol")
+
+Differential_genes_avg_vehicle.df <- mutate(diffGenes_vehicle.df,
+                                            WT_30hrs_vehicle.AVG = (WT_30hrs_vehicle_rep_1 + WT_30hrs_vehicle_rep_2 + WT_30hrs_vehicle_rep_3)/3,
+                                            MybM_OE_30hrs_vehicle.AVG = (MybM_OE_30hrs_vehicle_rep_1 + MybM_OE_30hrs_vehicle_rep_2 + MybM_OE_30hrs_vehicle_rep_3)/3,
+                                            #now make columns comparing each of the averages above 
+                                            LogFC.MybM_OE_30hrs_vehicle_vs_WT_30hrs_vehicle = (MybM_OE_30hrs_vehicle.AVG - WT_30hrs_vehicle.AVG)) %>%
+  mutate_if(is.numeric, round, 3)
+
+write_tsv(Differential_genes_avg_vehicle.df, "2023_9_25_Differential_genes_avg_vehicle_only_LFC1_05_separate.txt")
+
+
+#MybM_30hrs_Shield_vs_WT_30hrs_Shield
+#Fifth tab
+diffGenes_Shield <- v.DGEList.filtered.norm$E[results[,4] !=0,]
+head(diffGenes_Shield)
+dim(diffGenes_Shield)
+#convert DEGs to a dataframe using as_tibble
+diffGenes_Shield.df <- as_tibble(diffGenes_Shield, rownames = "geneSymbol")
+
+Differential_genes_avg_Shield.df <- mutate(diffGenes_Shield.df,
+                                           WT_30hrs_Shield.AVG = (WT_30hrs_Shield_rep_1 + WT_30hrs_Shield_rep_2 + WT_30hrs_Shield_rep_3)/3,
+                                           MybM_OE_30hrs_Shield.AVG = (MybM_OE_30hrs_Shield_rep_1 + MybM_OE_30hrs_Shield_rep_2 + MybM_OE_30hrs_Shield_rep_3)/3,
+                                           #now make columns comparing each of the averages above 
+                                           LogFC.MybM_OE_30hrs_Shield_vs_WT_30hrs_Shield = (MybM_OE_30hrs_Shield.AVG - WT_30hrs_Shield.AVG)) %>%
+  mutate_if(is.numeric, round, 3)
+
+write_tsv(Differential_genes_avg_Shield.df, "2023_9_25_Differential_genes_avg_Shield_only_LFC1_05_separate.txt")
+
+
+
+
+
+
