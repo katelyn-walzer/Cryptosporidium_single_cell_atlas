@@ -6,10 +6,10 @@ The parasite *Cryptosporidium* is a leading agent of diarrheal disease in young 
 
 ## DIRECTORY OUTLINE
 
-/Bulk_RNA_Seq_Analysis - 
+**/Bulk_RNA_Seq_Analysis -** contains the code and results for bulk RNA sequencing of sorted asexual, male, and female populations. Asexual and female datasets were obtained from GEO:GSE129267 while the male in vitro dataset was produced in this study. Supplementary_Data_1.R contains the code for QC, read mapping, filtering, normalization, and differential expression analysis of these stage-specific datasets. Outputs used for sequencing analysis are in this folder, as well as the study design file. Supplementary_Table_3 is a multi-tab Excel file containing differentially expressed genes between all samples while Supplementary_Table_4 is a multi-tab Excel file listing male and female marker genes identified in this study. The folder **QC** contains the outputs from running fastqc on all raw fastq files.
 
-/Bulk_RNA_Seq_Myb-M_Gain-of-Function_Analysis - 
+**/Bulk_RNA_Seq_Myb-M_Gain-of-Function_Analysis -** 
 
-/scRNA_Seq_Analysis - 
+**/scRNA_Seq_Analysis -**
 
-/scRNA_Seq_Analysis_with_lncRNAs - 
+**/scRNA_Seq_Analysis_with_lncRNAs -** 
