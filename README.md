@@ -47,3 +47,4 @@ The parasite *Cryptosporidium* is a leading agent of diarrheal disease in young 
 &nbsp;&nbsp;&nbsp;&nbsp;life cycle, representing the *C. parvum* transcriptome with lncRNAs included. Clusters 1 through 9 represent <br />
 &nbsp;&nbsp;&nbsp;&nbsp;the asexual cycle from invasion through egress, while clusters 10 through 12 are male and 13 through 18 are <br />
 &nbsp;&nbsp;&nbsp;&nbsp;female. <br />
+&nbsp;&nbsp;&nbsp;&nbsp;* Supplementary_Table_7 lists lncRNAs that were significantly enriched cluster markers with a p-value<e-50.
