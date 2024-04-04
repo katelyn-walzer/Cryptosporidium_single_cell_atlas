@@ -34,6 +34,7 @@ The parasite *Cryptosporidium* is a leading agent of diarrheal disease in young 
 &nbsp;&nbsp;&nbsp;&nbsp;invasion through egress, while clusters 10 through 12 are male and 13 through 18 are female. <br />
 &nbsp;&nbsp;&nbsp;&nbsp;* Supplementary_Table_9 is a multi-tab Excel file containing genes enriched in female clusters, exclusive to <br />
 &nbsp;&nbsp;&nbsp;&nbsp;female gametes (p-value<e-50 from enrichment), and plotted across pseudotime in Fig. 3 of manuscript. <br />
-&nbsp;&nbsp;&nbsp;&nbsp;* Supplementary_Table_10 is a multi-tab Excel file containing genes enriched in male clusters, exclusive to male gamonts (p-value<e-50 from enrichment), &nbsp;&nbsp;&nbsp;&nbsp;and plotted across pseudotime in Fig. 3 of manuscript. <br />
+&nbsp;&nbsp;&nbsp;&nbsp;* Supplementary_Table_10 is a multi-tab Excel file containing genes enriched in male clusters, exclusive to male <br />
+&nbsp;&nbsp;&nbsp;&nbsp;gamonts (p-value<e-50 from enrichment), and plotted across pseudotime in Fig. 3 of manuscript. <br />
 
 **/scRNA_Seq_Analysis_with_lncRNAs -** 
