@@ -24,6 +24,9 @@ The parasite *Cryptosporidium* is a leading agent of diarrheal disease in young 
 &nbsp;&nbsp;&nbsp;&nbsp;<ins>*Cryptosporidium* Single-Cell Atlas (All Samples)</ins> <br />
 &nbsp;&nbsp;&nbsp;&nbsp;* Supplementary_Data_4.R contains the code used for alignment, filtering, normalization, clustering, and differential gene expression &nbsp;&nbsp;&nbsp;&nbsp;analysis. <br />
 &nbsp;&nbsp;&nbsp;&nbsp;* Supplementary_Data_5.R contains the code for pseudotime analyses of asexual, male, and female single-cell transcriptomes. <br />
-&nbsp;&nbsp;&nbsp;&nbsp;* Metadata includes the metadata from this analysis. <br />
+&nbsp;&nbsp;&nbsp;&nbsp;* Crypto_atlas_metadata includes the metadata from this analysis. <br />
+&nbsp;&nbsp;&nbsp;&nbsp;* Supplementary_Table_5 is a multi-tab Excel file containing differentially expressed genes across the entire life cycle, representing the *C. parvum* &nbsp;&nbsp;&nbsp;&nbsp;transcriptome. Clusters 1 through 9 represent the asexual cycle from invasion through egress, while clusters 10 through 12 are male and 13 through 18 &nbsp;&nbsp;&nbsp;&nbsp;are female. <br />
+&nbsp;&nbsp;&nbsp;&nbsp;* Supplementary_Table_9 is a multi-tab Excel file containing genes enriched in female clusters, exclusive to female gametes (p-value<e-50 from &nbsp;&nbsp;&nbsp;&nbsp;enrichment), and plotted across pseudotime in Fig. 3 of manuscript. <br />
+&nbsp;&nbsp;&nbsp;&nbsp;* Supplementary_Table_10 is a multi-tab Excel file containing genes enriched in male clusters, exclusive to male gamonts (p-value<e-50 from enrichment), &nbsp;&nbsp;&nbsp;&nbsp;and plotted across pseudotime in Fig. 3 of manuscript. <br />
 
 **/scRNA_Seq_Analysis_with_lncRNAs -** 
