@@ -15,8 +15,10 @@ The parasite *Cryptosporidium* is a leading agent of diarrheal disease in young 
 &nbsp;&nbsp;&nbsp;&nbsp;<ins>Asexual</ins> <br />
 &nbsp;&nbsp;&nbsp;&nbsp;* Supplementary_Data_3.R contains the code used for alignment, filtering, normalization, clustering, and differential gene expression &nbsp;&nbsp;&nbsp;&nbsp;analysis. <br />
 &nbsp;&nbsp;&nbsp;&nbsp;* Asexual_metadata includes the metadata from this analysis. <br />
-&nbsp;&nbsp;&nbsp;&nbsp;* Supplementary_Table_2 is a multi-tab Excel file containing differentially expressed genes across asexual clusters (first tab) and lists of genes that &nbsp;&nbsp;&nbsp;&nbsp;were plotted across pseudotime (all other tabs). <br />
-&nbsp;&nbsp;&nbsp;&nbsp;* Supplementary_Table_8 is a multi-tab Excel file containing the results of differential gene expression analysis between in vitro 24 and 36 hour &nbsp;&nbsp;&nbsp;&nbsp;samples by cluster. <br /> <br />
+&nbsp;&nbsp;&nbsp;&nbsp;* Supplementary_Table_2 is a multi-tab Excel file containing differentially expressed genes across asexual clusters (first tab) and lists of 
+&nbsp;&nbsp;&nbsp;&nbsp;genes that were plotted across pseudotime (all other tabs). <br />
+&nbsp;&nbsp;&nbsp;&nbsp;* Supplementary_Table_8 is a multi-tab Excel file containing the results of differential gene expression analysis between in vitro 24 and 36 
+&nbsp;&nbsp;&nbsp;&nbsp;hour samples by cluster. <br />
 
 &nbsp;&nbsp;&nbsp;&nbsp;<ins>*Cryptosporidium* Single-Cell Atlas (All Samples)</ins> <br />
 
