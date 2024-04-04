@@ -24,6 +24,7 @@ The parasite *Cryptosporidium* is a leading agent of diarrheal disease in young 
 &nbsp;&nbsp;&nbsp;&nbsp;clusters (first tab) and lists of genes that were plotted across pseudotime (all other tabs). <br />
 &nbsp;&nbsp;&nbsp;&nbsp;* Supplementary_Table_8 is a multi-tab Excel file containing the results of differential gene expression analysis <br />
 &nbsp;&nbsp;&nbsp;&nbsp;between in vitro 24 and 36 hour samples by cluster. <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;> The asexual atlas is available on CryptoDB.org [here](https://cryptodb.org/cellxgene/view/cparIowaII_walzer_all_cellxgene_RSRC.h5ad/).
 
 &nbsp;&nbsp;&nbsp;&nbsp;<ins>*Cryptosporidium* Single-Cell Atlas (All Samples)</ins> <br />
 &nbsp;&nbsp;&nbsp;&nbsp;* Supplementary_Data_4.R contains the code used for alignment, filtering, normalization, clustering, and <br />
