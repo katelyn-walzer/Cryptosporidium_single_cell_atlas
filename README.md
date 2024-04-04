@@ -24,6 +24,6 @@ The parasite *Cryptosporidium* is a leading agent of diarrheal disease in young 
 &nbsp;&nbsp;&nbsp;&nbsp;<ins>*Cryptosporidium* Single-Cell Atlas (All Samples)</ins> <br />
 &nbsp;&nbsp;&nbsp;&nbsp;* Supplementary_Data_4.R contains the code used for alignment, filtering, normalization, clustering, and differential gene expression &nbsp;&nbsp;&nbsp;&nbsp;analysis. <br />
 &nbsp;&nbsp;&nbsp;&nbsp;* Supplementary_Data_5.R contains the code for pseudotime analyses of asexual, male, and female single-cell transcriptomes. <br />
-&nbsp;&nbsp;&nbsp;&nbsp;* Metadata
+&nbsp;&nbsp;&nbsp;&nbsp;* Metadata includes the metadata from this analysis. <br />
 
 **/scRNA_Seq_Analysis_with_lncRNAs -** 
