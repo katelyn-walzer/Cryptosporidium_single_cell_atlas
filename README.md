@@ -24,7 +24,7 @@ The parasite *Cryptosporidium* is a leading agent of diarrheal disease in young 
 &nbsp;&nbsp;&nbsp;&nbsp;clusters (first tab) and lists of genes that were plotted across pseudotime (all other tabs). <br />
 &nbsp;&nbsp;&nbsp;&nbsp;* Supplementary_Table_8 is a multi-tab Excel file containing the results of differential gene expression analysis <br />
 &nbsp;&nbsp;&nbsp;&nbsp;between in vitro 24 and 36 hour samples by cluster. <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;> The asexual atlas is available on CryptoDB.org [here](https://cryptodb.org/cellxgene/view/cparIowaII_walzer_all_cellxgene_RSRC.h5ad/).
+> The *C. parvum* asexual atlas is available on CryptoDB.org [here](https://cryptodb.org/cellxgene/view/cparIowaII_walzer_asexual_cellxgene_RSRC.h5ad/).
 
 &nbsp;&nbsp;&nbsp;&nbsp;<ins>*Cryptosporidium* Single-Cell Atlas (All Samples)</ins> <br />
 &nbsp;&nbsp;&nbsp;&nbsp;* Supplementary_Data_4.R contains the code used for alignment, filtering, normalization, clustering, and <br />
@@ -39,6 +39,7 @@ The parasite *Cryptosporidium* is a leading agent of diarrheal disease in young 
 &nbsp;&nbsp;&nbsp;&nbsp;female gametes (p-value<e-50 from enrichment), and plotted across pseudotime in Fig. 3 of manuscript. <br />
 &nbsp;&nbsp;&nbsp;&nbsp;* Supplementary_Table_10 is a multi-tab Excel file containing genes enriched in male clusters, exclusive to male <br />
 &nbsp;&nbsp;&nbsp;&nbsp;gamonts (p-value<e-50 from enrichment), and plotted across pseudotime in Fig. 3 of manuscript. <br />
+> The *C. parvum* single-cell atlas is available on CryptoDB.org [here](https://cryptodb.org/cellxgene/view/cparIowaII_walzer_all_cellxgene_RSRC.h5ad/).
 
 **/scRNA_Seq_Analysis_with_lncRNAs -** contains the code and results for scRNA-seq of parasites captured from HCT-8 culture or an IFN-gamma knockout mouse. While the samples are the same, this analysis differs from /scRNA_Seq_Analysis since the genome reference utilized here included non-coding RNAs, which are available at GenBank under accession records CP044415–CP044422. The filtered_feature_bc_matrix (Cell Ranger 3.1.0 output) consists of features (tsv), barcodes (tsv), and matrix (mtx) files which are all in this folder. The features (tsv) file is the same for all samples. Analysis was carried out on all samples.
 
