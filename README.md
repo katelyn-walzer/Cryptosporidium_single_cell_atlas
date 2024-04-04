@@ -37,4 +37,4 @@ The parasite *Cryptosporidium* is a leading agent of diarrheal disease in young 
 &nbsp;&nbsp;&nbsp;&nbsp;* Supplementary_Table_10 is a multi-tab Excel file containing genes enriched in male clusters, exclusive to male <br />
 &nbsp;&nbsp;&nbsp;&nbsp;gamonts (p-value<e-50 from enrichment), and plotted across pseudotime in Fig. 3 of manuscript. <br />
 
-**/scRNA_Seq_Analysis_with_lncRNAs -** 
+**/scRNA_Seq_Analysis_with_lncRNAs -** contains the code and results for scRNA-seq of parasites captured from HCT-8 culture or an IFN-gamma knockout mouse. While the samples are the same, this analysis differs from /scRNA_Seq_Analysis since the genome annotation utilized here included non-coding RNAs, which are available at GenBank under accession records CP044415–CP044422. The filtered_feature_bc_matrix (Cell Ranger 3.1.0 output) consists of features (tsv), barcodes (tsv), and matrix (mtx) files which are all in this folder. The features (tsv) file is the same for all samples.
