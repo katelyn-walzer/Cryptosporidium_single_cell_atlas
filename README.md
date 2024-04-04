@@ -14,7 +14,7 @@ The parasite *Cryptosporidium* is a leading agent of diarrheal disease in young 
 
 &nbsp;&nbsp;&nbsp;&nbsp;<ins>Asexual Single-Cell Atlas</ins> <br />
 &nbsp;&nbsp;&nbsp;&nbsp;* Supplementary_Data_3.R contains the code used for alignment, filtering, normalization, clustering, and differential gene expression &nbsp;&nbsp;&nbsp;&nbsp;analysis. <br />
-&nbsp;&nbsp;&nbsp;&nbsp;* Supplementary_Data_5.R contains the code for RNA velocity and pseudotime analyses of asexual single-cell transcriptomes.
+&nbsp;&nbsp;&nbsp;&nbsp;* Supplementary_Data_5.R contains the code for RNA velocity and pseudotime analyses of asexual single-cell transcriptomes. <br />
 &nbsp;&nbsp;&nbsp;&nbsp;* Asexual_metadata includes the metadata from this analysis. <br />
 &nbsp;&nbsp;&nbsp;&nbsp;* Supplementary_Table_2 is a multi-tab Excel file containing differentially expressed genes across asexual clusters (first tab) and lists of 
 &nbsp;&nbsp;&nbsp;&nbsp;genes that were plotted across pseudotime (all other tabs). <br />
@@ -23,7 +23,7 @@ The parasite *Cryptosporidium* is a leading agent of diarrheal disease in young 
 
 &nbsp;&nbsp;&nbsp;&nbsp;<ins>*Cryptosporidium* Single-Cell Atlas (All Samples)</ins> <br />
 &nbsp;&nbsp;&nbsp;&nbsp;* Supplementary_Data_4.R contains the code used for alignment, filtering, normalization, clustering, and differential gene expression &nbsp;&nbsp;&nbsp;&nbsp;analysis. <br />
-&nbsp;&nbsp;&nbsp;&nbsp;* Supplementary_Data_5.R contains the code for pseudotime analyses of asexual, male, and female single-cell transcriptomes.
+&nbsp;&nbsp;&nbsp;&nbsp;* Supplementary_Data_5.R contains the code for pseudotime analyses of asexual, male, and female single-cell transcriptomes. <br />
 &nbsp;&nbsp;&nbsp;&nbsp;* Metadata
 
 **/scRNA_Seq_Analysis_with_lncRNAs -** 
